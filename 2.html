@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Country Map Example</title>
+    <script src="mapdata.js"></script>
+    <script src="countrymap.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+  </head>
+  <body>
+  <h1>HTML5/Javascript Country Map</h1>
+  <canvas id="oilChart"" width="50" height="50"></canvas>
+  <script>
+  var oilCanvas = document.getElementById("oilChart");
+
+Chart.defaults.global.defaultFontFamily = "Lato";
+Chart.defaults.global.defaultFontSize = 18;
+
+var oilData = {
+    labels: [
+        "Inovacion Social",
+        "Proceso",
+        "Software",
+        "Producto y Servicio",
+        "Alimento"
+
+    ],
+    datasets: [
+        {
+          label: '# of Votes',
+          barPercentage: 0.5,
+        barThickness: 6,
+        maxBarThickness: 8,
+        minBarLength: 2,
+        data: [10, 20, 30, 40, 50, 60, 70],
+            backgroundColor: [
+                "#686de0",
+                "#6ab04c",
+                "#36a2eb",
+                "#cc65fe",
+                "#63FF84"
+            ]
+        }]
+};
+
+var pieChart = new Chart(oilCanvas, {
+  type: 'bar',
+  data: oilData,
+  options: {
+        title: {
+          
+            display: true,
+            text: 'Custom Chart Title'
+        }
+    }
+});
+
+  </script>
+	</body>
+</html>
+      
+    
+
